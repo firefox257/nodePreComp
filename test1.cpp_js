@@ -1,0 +1,47 @@
+#js<hash.js>
+#js
+	var outname = "try1.cpp_try1";
+	//$lib.fsWrite(outname, "");
+	$out = function(txt)
+	{
+		//$lib.fsAppend(outname, txt + "");
+		$lib.cout(txt);
+	}
+	
+	var classname = "";
+	function tclass(n)
+	{
+		classname = n;
+		return `class ${n}`;
+	}
+	$lib.Map("tclass");
+	
+	function gs(t, n, p)
+	{
+		return `private: ${t} _${n}; public: static ${t} set${n}(${t} v) {  return _${n};}`;
+	}
+	$lib.Map("gs");
+	
+	
+	
+#endjs
+#include<iostream>
+tclass("try1")
+{
+
+	gs("int", "w", "try1")
+	hash("try1")
+	hash("try2")
+	hash("try3")
+	
+	
+};
+
+
+int main()
+{
+	
+	
+	
+	return 0;
+}
