@@ -83,6 +83,12 @@ class GetSetObserver
 class try1
 {
 	
+		private: 
+		string _title; 
+		public: 
+		static string gettitle(try1 * at){ return at->_title;} 
+		static void settitle(try1 * at, string v){ at->_title = v; } 
+		GetSetObserver<string> title = GetSetObserver<string>(this, (void*)gettitle, (void*)settitle);
 	
 		private: 
 		int _w; 
@@ -93,13 +99,26 @@ class try1
 
 };
 
+class try2
+{
+	public:
+	try1 data;
+	try2()
+	{
+		data.title.addEvent(this, (void*)titleEvent);
+		data.title = "hi there";
+	}
+	static void titleEvent(try2 * at, string v)
+	{
+		cout << "changed string title: " << v << "\r\n";
+	}
+	
+};
 
 int main()
 {
-	cout << "here1";
-	try1 t1;
+	try2 t2;
 	
-	t1.w = 123;
-	cout << "w: " << t1.w << "\r\n";
+	t2.data.title = "and more";
 	return 0;
 }
