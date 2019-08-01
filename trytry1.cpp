@@ -1,50 +1,4 @@
-#js<hash.js>
-#js
-	//console.log("here1");
-	//stop();
-	var outname = "trytry1.cpp";
-	$lib.fsWrite(outname, "");
-	$out = function(txt)
-	{
-		$lib.fsAppend(outname, txt + "");
-		//$lib.cout(txt);
-	}
-	
-	var classname = "";
-	function tclass(n)
-	{
-		classname = n;
-		return `class ${n}`;
-	}
-	$lib.Map("tclass");
-	
-	
-	function gs(p, t, n)
-	{
-		return `
-		private: 
-		${t} _${n}; 
-		public: 
-		static ${t} get${n}(${p} * at){ return at->_${n};} 
-		static void set${n}(${p} * at, ${t} v){ at->_${n} = v; } 
-		GetSet<${t}> ${n} = GetSet<${t}>(this, (void*)get${n}, (void*)set${n});`;
-	}
-	$lib.Map("gs");
-	
-	function gsb(p, t, n)
-	{
-		return `
-		private: 
-		${t} _${n}; 
-		public: 
-		static ${t} get${n}(${p} * at){ return at->_${n};} 
-		static void set${n}(${p} * at, ${t} v){ at->_${n} = v; } 
-		GetSetObserver<${t}> ${n} = GetSetObserver<${t}>(this, (void*)get${n}, (void*)set${n});`;
-	}
-	$lib.Map("gsb");
-	
-	
-#endjs
+
 #include<iostream>
 #include <iostream>
 #include <string>
@@ -129,7 +83,13 @@ class GetSetObserver
 class try1
 {
 	
-	gsb("try1", "int" , "w")
+	
+		private: 
+		int _w; 
+		public: 
+		static int getw(try1 * at){ return at->_w;} 
+		static void setw(try1 * at, int v){ at->_w = v; } 
+		GetSetObserver<int> w = GetSetObserver<int>(this, (void*)getw, (void*)setw);
 
 };
 
