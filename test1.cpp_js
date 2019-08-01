@@ -1,5 +1,7 @@
 #js<hash.js>
 #js
+	//console.log("here1");
+	//stop();
 	var outname = "try1.cpp_try1";
 	//$lib.fsWrite(outname, "");
 	$out = function(txt)
