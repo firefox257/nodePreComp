@@ -80,6 +80,11 @@ class GetSetObserver
 };
 
 
+template <class V>
+class ListObserver
+{
+};
+
 class try1
 {
 	

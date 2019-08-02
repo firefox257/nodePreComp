@@ -126,6 +126,11 @@ class GetSetObserver
 };
 
 
+template <class V>
+class ListObserver
+{
+};
+
 class try1
 {
 	gsb("try1", "string", "title")

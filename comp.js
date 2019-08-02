@@ -2,7 +2,7 @@ const fs = require("fs");
 var $includeDir = (function()
 {
 	var retd = [];
-	retd.push("./");
+	
 	for(var i1 = 2; i1 < process.argv.length; i1++)
 	{
 		if(process.argv[i1] == "-I")
