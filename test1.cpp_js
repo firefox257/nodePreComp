@@ -1,8 +1,9 @@
 #js<hash.js>
 #js
+	console.log("$atdir done" + $atdir);
 	//console.log("here1");
-	//stop();
-	var outname = "trytry1.cpp";
+	//$stop();
+	var outname = $atdir + "trytry1.cpp";
 	$lib.fsWrite(outname, "");
 	$out = function(txt)
 	{
@@ -45,6 +46,8 @@
 	
 	
 #endjs
+
+
 #include<iostream>
 #include <iostream>
 #include <string>
@@ -135,6 +138,11 @@ class try1
 {
 	gsb("try1", "string", "title")
 	gsb("try1", "int" , "w")
+	public:
+	static unsigned int hashName()
+	{
+		return hash("try1");
+	}
 
 };
 
@@ -159,5 +167,6 @@ int main()
 	try2 t2;
 	
 	t2.data.title = "and more";
+	
 	return 0;
 }

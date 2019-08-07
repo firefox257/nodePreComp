@@ -103,11 +103,6 @@ class try1
 		static int getw(try1 * at){ return at->_w;} 
 		static void setw(try1 * at, int v){ at->_w = v; } 
 		GetSetObserver<int> w = GetSetObserver<int>(this, (void*)getw, (void*)setw);
-	public:
-	static unsigned int hashName()
-	{
-		return 3569110;
-	}
 
 };
 
@@ -132,6 +127,6 @@ int main()
 	try2 t2;
 	
 	t2.data.title = "and more";
-	
+	588714629;
 	return 0;
 }
