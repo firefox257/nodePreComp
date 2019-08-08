@@ -1,6 +1,6 @@
 #js<hash.js>
 #js
-	console.log("$atdir done" + $atdir);
+	console.log("$atdir " + $atdir);
 	//console.log("here1");
 	//$stop();
 	var outname = $atdir + "trytry1.cpp";
@@ -141,6 +141,7 @@ class try1
 	public:
 	static unsigned int hashName()
 	{
+		
 		return hash("try1");
 	}
 

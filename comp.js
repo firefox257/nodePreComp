@@ -22,9 +22,24 @@ var $out = function(txt)
 	process.stdout.write(txt + "");
 }
 var $atdir= "./";
+var $end = function()
+{
+};
 
 (function()
 {
+	
+	
+	
+	function ___defaultout(txt)
+	{
+		process.stdout.write(txt + "");
+	}
+	function ___defaultend()
+	{
+	}
+	
+	
 	function lib(c)
 	{
 		const fs = require("fs");
@@ -295,11 +310,17 @@ var $atdir= "./";
 			if(items[i].endsWith("_js"))
 			{
 				$atdir = dir;
+				$out = ___defaultout;
+				$end = ___defaultend;
 				var isredue = processFile(lib(fs.readFileSync(dir + items[i]).toString()));
 				
 				if(isredue) 
 				{
 					reprocess.push(dir + items[i]);
+				}
+				else
+				{
+					$end();
 				}
 			}
 			if(fs.statSync(dir + items[i]).isDirectory())
@@ -320,7 +341,10 @@ var $atdir= "./";
 			}
 			else
 			{
+				$out = ___defaultout;
+				$end = ___defaultend;
 				processFile(process.argv[i1]);
+				$end();
 			}
 			
 			i1++;
@@ -337,6 +361,9 @@ var $atdir= "./";
 	{
 		var isdone = processFile(lib(fs.readFileSync(reprocess1[i1]).toString()));
 	}
+
+
+
 	
 })();
 
