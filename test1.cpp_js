@@ -45,6 +45,11 @@
 	$lib.Map("gsb");
 	
 	
+	$end = function()
+	{
+		console.log("end here");
+	}
+	
 #endjs
 
 

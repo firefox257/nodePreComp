@@ -106,7 +106,7 @@ class try1
 	public:
 	static unsigned int hashName()
 	{
-		hi there
+		
 		return 3569110;
 	}
 
