@@ -1,6 +1,6 @@
 #js<hash.js>
 #js
-	console.log("$atdir " + $atdir);
+	console.log("$atdir $atfile" + $atdir + $atfile);
 	//console.log("here1");
 	//stop();
 	var outname = $atdir + "trytry1.cpp";

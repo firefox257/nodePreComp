@@ -22,6 +22,7 @@ var $out = function(txt)
 	process.stdout.write(txt + "");
 }
 var $atdir= "./";
+var $atfile = "";
 var $end = function()
 {
 };
@@ -309,6 +310,7 @@ var $end = function()
 		{
 			if(items[i].endsWith("_js"))
 			{
+				$atfile = items[i];
 				$atdir = dir;
 				$out = ___defaultout;
 				$end = ___defaultend;
@@ -341,6 +343,7 @@ var $end = function()
 			}
 			else
 			{
+				$atfile = process.argv[i1];
 				$out = ___defaultout;
 				$end = ___defaultend;
 				processFile(process.argv[i1]);
